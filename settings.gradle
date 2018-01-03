@@ -1,1 +1,1 @@
-include ':app', ':providerselector'
+include ':providerselector'
