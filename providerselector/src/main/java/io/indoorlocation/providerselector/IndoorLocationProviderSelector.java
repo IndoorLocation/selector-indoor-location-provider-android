@@ -1,6 +1,8 @@
 package io.indoorlocation.providerselector;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -84,7 +86,7 @@ public class IndoorLocationProviderSelector extends IndoorLocationProvider imple
         }
 
         if (withFloorIndoorLocations.size() > 0) {
-            withFloorIndoorLocations.sort(new Comparator<IndoorLocation>() {
+            Collections.sort(withFloorIndoorLocations, new Comparator<IndoorLocation>() {
                 @Override
                 public int compare(IndoorLocation indoorLocation, IndoorLocation t1) {
                     return (int)(t1.getAccuracy() - indoorLocation.getAccuracy());
@@ -94,13 +96,12 @@ public class IndoorLocationProviderSelector extends IndoorLocationProvider imple
         }
 
         if (withoutFloorIndoorLocations.size() > 0) {
-            withoutFloorIndoorLocations.sort(new Comparator<IndoorLocation>() {
+            Collections.sort(withoutFloorIndoorLocations, new Comparator<IndoorLocation>() {
                 @Override
                 public int compare(IndoorLocation indoorLocation, IndoorLocation t1) {
                     return (int)(t1.getAccuracy() - indoorLocation.getAccuracy());
                 }
             });
-            return withoutFloorIndoorLocations.get(0);
         }
 
         return null;
