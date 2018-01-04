@@ -28,6 +28,9 @@ public class IndoorLocationProviderSelector extends IndoorLocationProvider imple
 
     public void addIndoorLocationProvider(IndoorLocationProvider indoorLocationProvider) {
         this.indoorLocationProviderList.add(indoorLocationProvider);
+        if (this.isStarted) {
+            indoorLocationProvider.start();
+        }
     }
 
     public void removeIndoorLocationProvider(IndoorLocationProvider indoorLocationProvider) {
