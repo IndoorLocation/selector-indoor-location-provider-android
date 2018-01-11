@@ -19,8 +19,8 @@ public class IndoorLocationProviderSelector extends IndoorLocationProvider imple
     private double indoorLocationValidity;
     private boolean isStarted = false;
 
-    public IndoorLocationProviderSelector(String name, double indoorLocationValidity) {
-        super(name);
+    public IndoorLocationProviderSelector(double indoorLocationValidity) {
+        super();
         this.indoorLocationProviderList = new ArrayList<>();
         this.indoorLocationMap = new HashMap<>();
         this.indoorLocationValidity = indoorLocationValidity;
