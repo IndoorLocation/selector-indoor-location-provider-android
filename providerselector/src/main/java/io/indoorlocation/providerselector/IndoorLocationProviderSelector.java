@@ -105,6 +105,7 @@ public class IndoorLocationProviderSelector extends IndoorLocationProvider imple
                     return (int)(t1.getAccuracy() - indoorLocation.getAccuracy());
                 }
             });
+            return withoutFloorIndoorLocations.get(0);
         }
 
         return null;
