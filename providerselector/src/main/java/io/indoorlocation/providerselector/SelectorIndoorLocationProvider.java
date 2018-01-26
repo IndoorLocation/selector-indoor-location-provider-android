@@ -12,14 +12,14 @@ import io.indoorlocation.core.IndoorLocation;
 import io.indoorlocation.core.IndoorLocationProvider;
 import io.indoorlocation.core.IndoorLocationProviderListener;
 
-public class IndoorLocationProviderSelector extends IndoorLocationProvider implements IndoorLocationProviderListener {
+public class SelectorIndoorLocationProvider extends IndoorLocationProvider implements IndoorLocationProviderListener {
 
     private List<IndoorLocationProvider> indoorLocationProviderList;
     private Map<String, IndoorLocation> indoorLocationMap;
     private double indoorLocationValidity;
     private boolean isStarted = false;
 
-    public IndoorLocationProviderSelector(double indoorLocationValidity) {
+    public SelectorIndoorLocationProvider(double indoorLocationValidity) {
         super();
         this.indoorLocationProviderList = new ArrayList<>();
         this.indoorLocationMap = new HashMap<>();
